@@ -5,6 +5,7 @@ BASE_API_URL = "https://api.frankfurter.dev/v1/"
 SUPPORTED_CURRENCIES_URL = BASE_API_URL + "currencies"
 CONVERSION_URL = BASE_API_URL + "latest"
 
+
 def get_supported_currencies():
     try:
         response = requests.get(SUPPORTED_CURRENCIES_URL)
@@ -17,6 +18,7 @@ def get_supported_currencies():
     except Exception as e:
         print("Error:", str(e))
         return None
+
 
 def get_converesion(base_currency, target_currency):
     try:
@@ -33,7 +35,7 @@ def get_converesion(base_currency, target_currency):
     except Exception as e:
         print("Error:", str(e))
         return None
-    
+
 
 if __name__ == "__main__":
     currencies = get_supported_currencies()
